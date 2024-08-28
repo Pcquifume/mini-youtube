@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini YouTube - Poster une Vidéo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="youtube-logo.png" alt="Logo YouTube">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="explorer.html">Explorer</a></li>
+          <li><a href="abonnements.html">Abonnements</a></li>
+          <li><a href="upload.html">Poster une vidéo</a></li>
+          <li><a href="login.html">Connexion</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Rechercher des vidéos..." onkeyup="showSuggestions(this.value)">
+        <button type="button">Rechercher</button>
+        <div id="suggestions" class="suggestions"></div>
+      </div>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section class="upload">
+      <h2>Poster une vidéo</h2>
+      <form action="upload-handler.html" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title">Titre de la vidéo</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="file">Choisir un fichier</label>
+          <input type="file" id="file" name="file" accept="video/*" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+        <button type="submit">Téléverser</button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Mini YouTube. Tous droits réservés.</p>
+  </footer>
+  
+  <script src="scripts.js"></script>
+</body>
+</html>
